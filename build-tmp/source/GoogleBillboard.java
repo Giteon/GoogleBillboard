@@ -21,13 +21,36 @@ public void setup()
 }  
 public void draw()  
 {   
-	//not needed for this assignment
-}  
+	for(int j = 2; j < e.length();j++)
+	{
+	String digits = e.substring(j,j+10); 
+	double dNum = Double.parseDouble(digits); 
+
+if(isPrime(dNum) == true)
+{
+	System.out.println(digits); 
+	break;
+}
+}
+}
+
 public boolean isPrime(double dNum)  
 {   
-    //to be finished later   
-    return true;  
-} 
+
+if (dNum < 2)
+{
+return false;
+}
+
+  for(int i = 2; i<= Math.sqrt(dNum);i++)
+  {
+  if(dNum % i==0)
+  {
+  return false;
+  }
+  }
+  return true;
+}
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "GoogleBillboard" };
     if (passedArgs != null) {
